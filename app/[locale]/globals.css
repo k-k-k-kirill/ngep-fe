@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Mona Sans";
+  src: url("../../fonts//MonaSans-Regular.woff2") format("woff2"),
+    url("../../fonts//MonaSans-Regular.woff2") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+html {
+  font-family: "Mona Sans", "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  line-height: 120%;
+  background-color: #fbfafa;
+}
+
+pre {
+  overflow: auto;
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  font-family: "Mona Sans", "Open Sans";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+h1 {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  font-family: "Mona Sans", "Open Sans";
+}
+
+h2 {
+  font-family: "Mona Sans", "Open Sans";
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+h3 {
+  font-family: "Mona Sans", "Open Sans";
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.lead {
+  font-size: 24px;
+  font-style: normal;
+  line-height: 130%;
+}

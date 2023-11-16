@@ -1,0 +1,20 @@
+.sectionLink {
+  position: relative;
+  transition: all 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+.sectionLink::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  transition: width 0.2s ease-in-out;
+}
+
+.sectionLink:hover::after {
+  width: 100%;
+}
