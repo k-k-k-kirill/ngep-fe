@@ -39,7 +39,13 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
                   index < Navigation.length - 1 ? "mr-1" : ""
                 } lg:mr-4 text-sm lg:text-base ${styles.navLink}`}
                 key={index}
-                url={item.Url.includes("http") ? item.url : `/${item.Url}`}
+                url={
+                  item.Url
+                    ? item.Url.includes("http")
+                      ? item.url
+                      : `/${item.Url}`
+                    : "/"
+                }
                 title={item.Title}
               />
             ))}
