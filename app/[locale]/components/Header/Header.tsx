@@ -33,22 +33,25 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
       <div className="flex items-center col-span-2 lg:col-span-1">
         {Navigation && (
           <nav>
-            {Navigation.map((item, index) => (
-              <SectionLink
-                className={`${
-                  index < Navigation.length - 1 ? "mr-1" : ""
-                } lg:mr-4 text-sm lg:text-base ${styles.navLink}`}
-                key={index}
-                url={
-                  item.Url
-                    ? item.Url.includes("http")
-                      ? item.url
-                      : `/${item.Url}`
-                    : "/"
-                }
-                title={item.Title}
-              />
-            ))}
+            {Navigation.map(
+              (item, index) =>
+                item.Url && (
+                  <SectionLink
+                    className={`${
+                      index < Navigation.length - 1 ? "mr-1" : ""
+                    } lg:mr-4 text-sm lg:text-base ${styles.navLink}`}
+                    key={index}
+                    url={
+                      item.Url
+                        ? item.Url.includes("http")
+                          ? item.Url
+                          : `/${item.Url}`
+                        : "/"
+                    }
+                    title={item.Title}
+                  />
+                )
+            )}
           </nav>
         )}
       </div>
