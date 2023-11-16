@@ -21,7 +21,7 @@ const SectionImage: React.FC<SectionImageProps> = ({ image }) => {
   return (
     <div style={{ width: "100%" }}>
       <Image
-        src={`${process.env.API_URL}${image.data.attributes.url}`}
+        src={`${image.data.attributes.url}`}
         alt={image.data.attributes.alt}
         width={image.data.attributes.width}
         height={image.data.attributes.height}
