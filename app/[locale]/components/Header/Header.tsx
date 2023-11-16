@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
   const { Navigation } = data;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const languages = ["en", "fi", "vi"];
+  const languages = ["en", "fi"];
   const currentLanguage = locale;
   const otherLanguages = languages.filter((lang) => lang !== currentLanguage);
 
@@ -39,7 +39,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
                   index < Navigation.length - 1 ? "mr-1" : ""
                 } lg:mr-4 text-sm lg:text-base ${styles.navLink}`}
                 key={index}
-                url={item.Url ? `/${item.Url}` : "/"}
+                url={item.Url.includes("http") ? item.url : `/${item.Url}`}
                 title={item.Title}
               />
             ))}
@@ -62,11 +62,11 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
         {isDropdownOpen && (
           <div className={`${styles.dropdown} absolute right-0 bg-white`}>
             {otherLanguages.map((lang) => (
-              <div key={lang} className={`${styles.dropdownItem}`}>
-                <Link className="capitalize" href={`/${lang}`}>
+              <Link className="capitalize" href={`/${lang}`}>
+                <div key={lang} className={`${styles.dropdownItem}`}>
                   {lang}
-                </Link>
-              </div>
+                </div>
+              </Link>
             ))}
           </div>
         )}
