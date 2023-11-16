@@ -49,7 +49,7 @@ export default async function Home() {
 
   return (
     <main>
-      {data.attributes.Sections?.map((section: any, index: number) => {
+      {data && data?.attributes?.Sections?.map((section: any, index: number) => {
         const SectionComponent =
           sectionComponentsMap[section.__component.replace("sections.", "")];
         if (!SectionComponent) {

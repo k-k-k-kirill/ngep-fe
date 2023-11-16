@@ -24,7 +24,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({ data }) => {
           {Benefits &&
             Benefits.map((benefit, index) => {
               return (
-                <div className="mb-4">
+                <div key={index} className="mb-4">
                   {benefit.Title && (
                     <h3 className="mb-2">
                       {index < 10 ? `0${++index}` : index} {benefit.Title}
