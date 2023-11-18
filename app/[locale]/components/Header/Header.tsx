@@ -58,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
                           ? "mr-1 md:mr-2 lg:mr-2 "
                           : ""
                       } text-sm lg:text-base ${styles.navLink}`}
-                      key={index}
+                      key={`desktop-nav-link-${index}`}
                       url={
                         item.Url
                           ? item.Url.includes("http")
@@ -108,10 +108,9 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
               Navigation.map(
                 (item, index) =>
                   item.Url && (
-                    <div>
+                    <div key={`mobile-nav-link-${index}`}>
                       <SectionLink
                         className={`block py-2`}
-                        key={index}
                         url={
                           item.Url.includes("http") ? item.Url : `/${item.Url}`
                         }
@@ -123,7 +122,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
             <div className="pt-4">
               {otherLanguages.map((lang, index) => (
                 <Link
-                  key={lang}
+                  key={`mobile-lang-switcher-${lang}`}
                   href={`/${lang}`}
                   className={`${
                     index < otherLanguages.length - 1 ? "mr-2" : ""
