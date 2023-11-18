@@ -20,7 +20,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
 
   const validationSchema = Yup.object().shape({
     Name: Yup.string().required(t("nameError")),
-    Email: Yup.string().email(t("emailInvalidError")).required(t("emailError")),
+    Email: Yup.string().email(t("emailErrorInvalid")).required(t("emailError")),
     CompanyWebsite: Yup.string().url(t("companyWebsiteInvalidError")),
     Message: Yup.string().required(t("messageError")),
     PrivacyPolicyAgreed: Yup.boolean().oneOf([true], t("privacyPolicyError")),
@@ -153,7 +153,13 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     <span
                       style={{ display: "inline-block", marginLeft: "5px" }}
                     >
-                      I agree to the privacy policy
+                      {t.rich("agreePrivacyPolicy", {
+                        privacyPolicyLink: (chunks) => (
+                          <a className="underline" href="/privacy-policy">
+                            {chunks}
+                          </a>
+                        ),
+                      })}
                     </span>
                   </label>
                 </div>

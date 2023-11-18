@@ -62,3 +62,13 @@
 .languageSwitcher:hover::after {
   width: 100%;
 }
+
+.mobileNav {
+  position: absolute;
+  top: 148px;
+  left: 0;
+  right: 0;
+  background-color: #fbfafa;
+  width: 100vw;
+  text-align: right;
+}

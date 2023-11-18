@@ -12,6 +12,7 @@
     "privacyPolicyError": "Sinun täytyy hyväksyä tietosuojakäytäntö",
     "button": "Lähetä",
     "successTitle": "Kiitos!",
-    "successText": "Viestisi on lähetetty onnistuneesti. Palaamme asiaan pian."
+    "successText": "Viestisi on lähetetty onnistuneesti. Palaamme asiaan pian.",
+    "agreePrivacyPolicy": "Hyväksyn <privacyPolicyLink>tietosuojakäytännön</privacyPolicyLink>"
   }
 }

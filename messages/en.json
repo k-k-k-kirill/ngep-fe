@@ -12,6 +12,7 @@
     "privacyPolicyError": "You must agree to the privacy policy",
     "button": "Send",
     "successTitle": "Thank you!",
-    "successText": "Your message has been successfully sent. We will get back to you soon."
+    "successText": "Your message has been successfully sent. We will get back to you soon.",
+    "agreePrivacyPolicy": "I agree to the <privacyPolicyLink>privacy policy</privacyPolicyLink>"
   }
 }

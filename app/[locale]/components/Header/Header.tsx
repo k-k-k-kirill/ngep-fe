@@ -7,6 +7,7 @@ import Image from "next/image";
 import styles from "./Header.module.css";
 import { useLocale } from "next-intl";
 import Link from "next/link";
+import Hamburger from "../../../../assets/hamburger.svg";
 
 interface HeaderProps {
   data: any;
@@ -16,6 +17,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
   const locale = useLocale();
   const { Navigation } = data;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const languages = ["en", "fi", "vi"];
   const currentLanguage = locale;
@@ -25,37 +27,54 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
   return (
     <header className="container mx-auto px-4 grid grid-cols-4 gap-4 py-5">
       <div className="lg:col-span-2">
         <h1>EPD</h1>
       </div>
-      <div className="flex items-center col-span-2 lg:col-span-1">
-        {Navigation && (
-          <nav>
-            {Navigation.map(
-              (item, index) =>
-                item.Url && (
-                  <SectionLink
-                    className={`${
-                      index < Navigation.length - 1 ? "mr-1" : ""
-                    } lg:mr-4 text-sm lg:text-base ${styles.navLink}`}
-                    key={index}
-                    url={
-                      item.Url
-                        ? item.Url.includes("http")
-                          ? item.Url
-                          : `/${item.Url}`
-                        : "/"
-                    }
-                    title={item.Title}
-                  />
-                )
-            )}
-          </nav>
-        )}
+      <div className="col-span-3 lg:col-span-1 flex justify-end lg:justify-start items-center">
+        <div className="lg:hidden" onClick={toggleMobileMenu}>
+          <span>
+            <Image src={Hamburger} alt="Menu" width={24} height={24} />
+          </span>
+        </div>
+        <div
+          className={`hidden lg:flex items-center ${
+            isMobileMenuOpen ? "block" : "hidden"
+          }`}
+        >
+          {Navigation && (
+            <nav>
+              {Navigation.map(
+                (item, index) =>
+                  item.Url && (
+                    <SectionLink
+                      className={`${
+                        index < Navigation.length - 1
+                          ? "mr-1 md:mr-2 lg:mr-2 "
+                          : ""
+                      } text-sm lg:text-base ${styles.navLink}`}
+                      key={index}
+                      url={
+                        item.Url
+                          ? item.Url.includes("http")
+                            ? item.Url
+                            : `/${item.Url}`
+                          : "/"
+                      }
+                      title={item.Title}
+                    />
+                  )
+              )}
+            </nav>
+          )}
+        </div>
       </div>
-      <div className={`flex items-center justify-end relative`}>
+      <div className={`hidden lg:flex items-center justify-end relative`}>
         <div
           onClick={toggleDropdown}
           className={`cursor-pointer flex items-center`}
@@ -80,6 +99,43 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
           </div>
         )}
       </div>
+      {isMobileMenuOpen && (
+        <div
+          className={`${styles.mobileNav} px-4 sm:px-6 lg:hidden z-10 border-t py-2`}
+        >
+          <nav>
+            {Navigation &&
+              Navigation.map(
+                (item, index) =>
+                  item.Url && (
+                    <div>
+                      <SectionLink
+                        className={`block py-2`}
+                        key={index}
+                        url={
+                          item.Url.includes("http") ? item.Url : `/${item.Url}`
+                        }
+                        title={item.Title}
+                      />
+                    </div>
+                  )
+              )}
+            <div className="pt-4">
+              {otherLanguages.map((lang, index) => (
+                <Link
+                  key={lang}
+                  href={`/${lang}`}
+                  className={`${
+                    index < otherLanguages.length - 1 ? "mr-2" : ""
+                  } capitalize inline-block py-2`}
+                >
+                  {lang}
+                </Link>
+              ))}
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 };

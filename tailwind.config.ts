@@ -27,6 +27,7 @@ const config: Config = {
       "3": "30px",
       "4": "20px",
       "5": "50px",
+      "6": "64px",
     },
     gap: {
       "4": "50px",

@@ -12,6 +12,7 @@
     "privacyPolicyError": "Bạn phải đồng ý với chính sách bảo mật",
     "button": "Gửi",
     "successTitle": "Cảm ơn!",
-    "successText": "Tin nhắn của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại với bạn sớm."
+    "successText": "Tin nhắn của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại với bạn sớm.",
+    "agreePrivacyPolicy": "Tôi đồng ý với <privacyPolicyLink>chính sách bảo mật</privacyPolicyLink>"
   }
 }
