@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
   const { Navigation } = data;
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
-  const languages = ["en", "fi"];
+  const languages = ["en", "fi", "vi"];
   const currentLanguage = locale;
   const otherLanguages = languages.filter((lang) => lang !== currentLanguage);
 
