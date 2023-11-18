@@ -71,8 +71,8 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
         {isDropdownOpen && (
           <div className={`${styles.dropdown} absolute right-0 bg-white`}>
             {otherLanguages.map((lang) => (
-              <div className={`${styles.dropdownItem}`}>
-                <Link key={lang} className="capitalize block" href={`/${lang}`}>
+              <div key={lang} className={`${styles.dropdownItem}`}>
+                <Link className="capitalize block" href={`/${lang}`}>
                   {lang}
                 </Link>
               </div>
