@@ -1,0 +1,18 @@
+{
+  "Contact": {
+    "name": "Namn",
+    "email": "E-post",
+    "companyWebsite": "Företagets webbplats",
+    "companyWebsiteInvalidError": "Ogiltig webbplatsadress",
+    "message": "Meddelande",
+    "nameError": "Namn är obligatoriskt",
+    "emailError": "E-post är obligatorisk",
+    "emailErrorInvalid": "E-post är ogiltig",
+    "messageError": "Meddelande är obligatoriskt",
+    "privacyPolicyError": "Du måste godkänna sekretesspolicyn",
+    "button": "Skicka",
+    "successTitle": "Tack!",
+    "successText": "Ditt meddelande har skickats. Vi återkommer snart.",
+    "agreePrivacyPolicy": "Jag godkänner <privacyPolicyLink>sekretesspolicyn</privacyPolicyLink>"
+  }
+}

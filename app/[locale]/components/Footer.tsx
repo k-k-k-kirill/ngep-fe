@@ -1,5 +1,6 @@
 import React from "react";
 import SectionLink from "./SectionLink/SectionLink";
+import SiteLogo from "./SiteLogo";
 
 interface FooterProps {
   data: any;
@@ -19,7 +20,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
     <footer className="bg-grey py-5">
       <div className="container px-4 mx-auto">
         <div className="mb-4">
-          <h1>EPD</h1>
+          <SiteLogo />
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div>

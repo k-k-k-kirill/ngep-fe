@@ -8,6 +8,7 @@ import styles from "./Header.module.css";
 import { useLocale } from "next-intl";
 import Link from "next/link";
 import Hamburger from "../../../../assets/hamburger.svg";
+import Logo from "../../../../assets/logo.png";
 
 interface HeaderProps {
   data: any;
@@ -19,7 +20,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const languages = ["en", "fi", "vi"];
+  const languages = ["en", "fi", "vi", "sv"];
   const currentLanguage = locale;
   const otherLanguages = languages.filter((lang) => lang !== currentLanguage);
 
@@ -34,7 +35,9 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
   return (
     <header className="container mx-auto px-4 grid grid-cols-4 gap-4 py-5">
       <div className="lg:col-span-2">
-        <h1>EPD</h1>
+        <Link href="/">
+          <Image src={Logo} alt="NGEP" width={80} height={80} />
+        </Link>
       </div>
       <div className="col-span-3 lg:col-span-1 flex justify-end lg:justify-start items-center">
         <div className="lg:hidden" onClick={toggleMobileMenu}>
