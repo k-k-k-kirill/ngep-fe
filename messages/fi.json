@@ -1,1 +1,17 @@
-{}
+{
+  "Contact": {
+    "name": "Nimi",
+    "email": "Sähköposti",
+    "companyWebsite": "Yrityksen verkkosivusto",
+    "companyWebsiteInvalidError": "Virheellinen verkkosivuston URL",
+    "message": "Viesti",
+    "nameError": "Nimi vaaditaan",
+    "emailError": "Sähköposti vaaditaan",
+    "emailErrorInvalid": "Sähköposti on virheellinen",
+    "messageError": "Viesti vaaditaan",
+    "privacyPolicyError": "Sinun täytyy hyväksyä tietosuojakäytäntö",
+    "button": "Lähetä",
+    "successTitle": "Kiitos!",
+    "successText": "Viestisi on lähetetty onnistuneesti. Palaamme asiaan pian."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "Contact": {
+    "name": "Tên",
+    "email": "Email",
+    "companyWebsite": "Trang web công ty",
+    "companyWebsiteInvalidError": "URL trang web không hợp lệ",
+    "message": "Tin nhắn",
+    "nameError": "Tên ( bắt buộc )",
+    "emailError": "Email ( bắt buộc )",
+    "emailErrorInvalid": "Email không hợp lệ",
+    "messageError": "Tin nhắn ( bắt buộc )",
+    "privacyPolicyError": "Bạn phải đồng ý với chính sách bảo mật",
+    "button": "Gửi",
+    "successTitle": "Cảm ơn!",
+    "successText": "Tin nhắn của bạn đã được gửi thành công. Chúng tôi sẽ liên hệ lại với bạn sớm."
+  }
+}

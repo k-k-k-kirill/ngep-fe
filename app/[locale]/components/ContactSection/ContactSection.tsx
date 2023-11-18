@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import styles from "./ContactSection.module.css";
 import Section from "../Section";
 import Button from "../Button/Button";
+import { useTranslations } from "next-intl";
 
 interface ContactSectionProps {
   data: any;
@@ -15,15 +16,14 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
   const { Title } = data;
   const [isSubmitted, setIsSubmitted] = useState(false);
 
+  const t = useTranslations("Contact");
+
   const validationSchema = Yup.object().shape({
-    Name: Yup.string().required("Name is required"),
-    Email: Yup.string().email("Invalid email").required("Email is required"),
-    CompanyWebsite: Yup.string().url("Invalid URL"),
-    Message: Yup.string().required("Message is required"),
-    PrivacyPolicyAgreed: Yup.boolean().oneOf(
-      [true],
-      "You must agree to the privacy policy"
-    ),
+    Name: Yup.string().required(t("nameError")),
+    Email: Yup.string().email(t("emailInvalidError")).required(t("emailError")),
+    CompanyWebsite: Yup.string().url(t("companyWebsiteInvalidError")),
+    Message: Yup.string().required(t("messageError")),
+    PrivacyPolicyAgreed: Yup.boolean().oneOf([true], t("privacyPolicyError")),
   });
 
   const initialValues = {
@@ -66,11 +66,8 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
     return (
       <Section className="bg-greyish py-5">
         <div className="container mx-auto px-4">
-          <h2 className="mb-2">Thank You!</h2>
-          <p>
-            Your message has been successfully sent. We will get back to you
-            soon.
-          </p>
+          <h2 className="mb-2">{t("successTitle")}</h2>
+          <p>{t("successText")}</p>
         </div>
       </Section>
     );
@@ -93,7 +90,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     className={styles.textInput}
                     type="text"
                     name="Name"
-                    placeholder="Name*"
+                    placeholder={`${t("name")}*`}
                   />
                   <ErrorMessage
                     className={styles.errorMessage}
@@ -107,7 +104,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     className={styles.textInput}
                     type="email"
                     name="Email"
-                    placeholder="Email*"
+                    placeholder={`${t("email")}*`}
                   />
                   <ErrorMessage
                     className={styles.errorMessage}
@@ -121,7 +118,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     className={styles.textInput}
                     type="text"
                     name="CompanyWebsite"
-                    placeholder="Company Website"
+                    placeholder={`${t("companyWebsite")}`}
                   />
                   <ErrorMessage
                     className={styles.errorMessage}
@@ -135,7 +132,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     className={`${styles.textInput} ${styles.textArea}`}
                     as="textarea"
                     name="Message"
-                    placeholder="Message*"
+                    placeholder={`${t("message")}*`}
                   />
                   <ErrorMessage
                     className={styles.errorMessage}
@@ -165,7 +162,7 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                   type="submit"
                   className="ml-auto"
                   disabled={isSubmitting || !values.PrivacyPolicyAgreed}
-                  title={"Get in touch"}
+                  title={t("button")}
                 />
               </Form>
             )}

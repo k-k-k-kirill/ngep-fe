@@ -1,1 +1,17 @@
-{}
+{
+  "Contact": {
+    "name": "Name",
+    "email": "Email",
+    "companyWebsite": "Company Website",
+    "companyWebsiteInvalidError": "Invalid website URL",
+    "message": "Message",
+    "nameError": "Name is required",
+    "emailError": "Email is required",
+    "emailErrorInvalid": "Email is invalid",
+    "messageError": "Message is required",
+    "privacyPolicyError": "You must agree to the privacy policy",
+    "button": "Send",
+    "successTitle": "Thank you!",
+    "successText": "Your message has been successfully sent. We will get back to you soon."
+  }
+}
