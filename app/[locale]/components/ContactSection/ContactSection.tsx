@@ -155,7 +155,10 @@ const ContactSection: React.FC<ContactSectionProps> = ({ data }) => {
                     >
                       {t.rich("agreePrivacyPolicy", {
                         privacyPolicyLink: (chunks) => (
-                          <a className="underline" href="/privacy-policy">
+                          <a
+                            className="underline"
+                            href="https://drive.google.com/file/d/1VgecL311kU_fNJwdUbNnHr4w5tvclDnJ/view?usp=drive_link"
+                          >
                             {chunks}
                           </a>
                         ),
