@@ -82,7 +82,9 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
           onClick={toggleDropdown}
           className={`cursor-pointer flex items-center`}
         >
-          <span className={styles.currentLanguage}>{locale}</span>
+          <span className={`${styles.currentLanguage} uppercase`}>
+            {locale}
+          </span>
           <Image
             priority
             src={Arrow}
