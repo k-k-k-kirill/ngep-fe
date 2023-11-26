@@ -10,7 +10,7 @@ const BenefitsSection: React.FC<BenefitsSectionProps> = ({ data }) => {
   const { Title, Image, Benefits } = data;
 
   return (
-    <Section className="container mx-auto px-4 mb-12">
+    <Section id="benefits" className="container mx-auto px-4 mb-12">
       {Title && (
         <div className="mb-3">
           <h2>{Title}</h2>
