@@ -129,7 +129,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
                   href={`/${lang}`}
                   className={`${
                     index < otherLanguages.length - 1 ? "mr-2" : ""
-                  } capitalize inline-block py-2`}
+                  } uppercase inline-block py-2`}
                 >
                   {lang}
                 </Link>
