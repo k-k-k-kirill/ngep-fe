@@ -3,7 +3,7 @@ import markdownToHtml from "../utils/markdownToHtml";
 
 interface RichContent {
   content: string;
-  classes: string;
+  classes?: string;
 }
 
 const RichContent: React.FC<RichContent> = async ({ content, classes }) => {
