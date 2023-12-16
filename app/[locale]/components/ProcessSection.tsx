@@ -16,7 +16,7 @@ const ProcessSection: React.FC<ProcessSectionProps> = ({ data }) => {
   const { Title, Content, Steps } = data;
 
   return (
-    <Section className="mb-12 container mx-auto px-4">
+    <Section id="process" className="mb-12 container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div>{Title && <h2 className="mb-3">{Title}</h2>}</div>
       </div>

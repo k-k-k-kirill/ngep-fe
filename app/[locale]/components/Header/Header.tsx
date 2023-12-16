@@ -82,7 +82,9 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
           onClick={toggleDropdown}
           className={`cursor-pointer flex items-center`}
         >
-          <span className={styles.currentLanguage}>{locale}</span>
+          <span className={`${styles.currentLanguage} uppercase`}>
+            {locale}
+          </span>
           <Image
             priority
             src={Arrow}
@@ -94,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
           <div className={`${styles.dropdown} absolute right-0 bg-white`}>
             {otherLanguages.map((lang) => (
               <div key={lang} className={`${styles.dropdownItem}`}>
-                <Link className="capitalize block" href={`/${lang}`}>
+                <Link className="uppercase block" href={`/${lang}`}>
                   {lang}
                 </Link>
               </div>
@@ -129,7 +131,7 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
                   href={`/${lang}`}
                   className={`${
                     index < otherLanguages.length - 1 ? "mr-2" : ""
-                  } capitalize inline-block py-2`}
+                  } uppercase inline-block py-2`}
                 >
                   {lang}
                 </Link>

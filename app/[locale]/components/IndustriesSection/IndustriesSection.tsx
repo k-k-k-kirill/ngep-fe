@@ -14,6 +14,7 @@ const IndustriesSection: React.FC<IndustriesSectionProps> = ({ data }) => {
 
   return (
     <Section
+      id="industries"
       className={`mb-12 ${styles.industriesSection} container mx-auto px-4`}
     >
       <div>{Title && <h2 className="mb-3">{Title}</h2>}</div>
