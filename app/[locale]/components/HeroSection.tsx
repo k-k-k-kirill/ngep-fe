@@ -2,6 +2,7 @@ import React from "react";
 import Section from "./Section";
 import ButtonLink from "./ButtonLink/ButtonLink";
 import SectionImage from "./SectionImage";
+import RichContent from "./RichContent";
 
 interface HeroSectionProps {
   data: any;
@@ -15,7 +16,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({ data }) => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
         <div className="flex flex-col justify-center order-2 lg:order-1">
           {Title && <h1 className="mb-3">{Title}</h1>}
-          {Content && <p className="lead mb-4">{Content}</p>}
+          {Content && <RichContent classes="lead mb-3" content={Content} />}
           {CTA && <ButtonLink data={CTA} />}
         </div>
 

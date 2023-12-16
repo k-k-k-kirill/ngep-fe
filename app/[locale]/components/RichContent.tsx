@@ -3,12 +3,18 @@ import markdownToHtml from "../utils/markdownToHtml";
 
 interface RichContent {
   content: string;
+  classes: string;
 }
 
-const RichContent: React.FC<RichContent> = async ({ content }) => {
+const RichContent: React.FC<RichContent> = async ({ content, classes }) => {
   const htmlContent = await markdownToHtml(content);
 
-  return <pre dangerouslySetInnerHTML={{ __html: htmlContent }} />;
+  return (
+    <pre
+      className={classes}
+      dangerouslySetInnerHTML={{ __html: htmlContent }}
+    />
+  );
 };
 
 export default RichContent;

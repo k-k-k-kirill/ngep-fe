@@ -26,6 +26,7 @@ const SectionImage: React.FC<SectionImageProps> = ({ image }) => {
         width={image.data?.attributes.width}
         height={image.data?.attributes.height}
         layout="responsive"
+        loading="lazy"
       />
     </div>
   );

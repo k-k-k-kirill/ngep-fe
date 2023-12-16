@@ -13,6 +13,6 @@
     "button": "Skicka",
     "successTitle": "Tack!",
     "successText": "Ditt meddelande har skickats. Vi återkommer snart.",
-    "agreePrivacyPolicy": "Jag godkänner <privacyPolicyLink>sekretesspolicyn</privacyPolicyLink>"
+    "agreePrivacyPolicy": "Jag har läst och accepterar <privacyPolicyLink>integritetspolicyn</privacyPolicyLink>"
   }
 }
