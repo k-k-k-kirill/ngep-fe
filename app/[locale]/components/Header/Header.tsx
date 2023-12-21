@@ -35,8 +35,20 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
   return (
     <header className="container mx-auto px-4 grid grid-cols-4 gap-4 py-5">
       <div>
-        <Link href="/">
-          <Image src={Logo} alt="NGEP" width={80} height={80} />
+        <Link
+          className="md:inline-flex md:justify-center md:flex-col md:items-center"
+          href="/"
+        >
+          <Image
+            className="mb-1"
+            src={Logo}
+            alt="NGEP"
+            width={80}
+            height={80}
+          />
+          <span className="text-xs hidden md:block text-center">
+            Nordic Green Environmental <br /> Partners
+          </span>
         </Link>
       </div>
       <div className="col-span-3 lg:col-span-2 flex justify-end items-center">

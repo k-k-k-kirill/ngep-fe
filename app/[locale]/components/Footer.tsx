@@ -1,6 +1,8 @@
 import React from "react";
 import SectionLink from "./SectionLink/SectionLink";
-import SiteLogo from "./SiteLogo";
+import Logo from "../../../assets/logo.png";
+import Link from "next/link";
+import Image from "next/image";
 
 interface FooterProps {
   data: any;
@@ -19,8 +21,22 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
   return (
     <footer className="bg-grey py-5">
       <div className="container px-4 mx-auto">
-        <div className="mb-4">
-          <SiteLogo />
+        <div className="mb-4 flex justify-start">
+          <Link
+            className="md:flex md:justify-center md:flex-col md:items-center"
+            href="/"
+          >
+            <Image
+              className="mb-1"
+              src={Logo}
+              alt="NGEP"
+              width={80}
+              height={80}
+            />
+            <span className="text-xs hidden md:block text-center">
+              Nordic Green Environmental <br /> Partners
+            </span>
+          </Link>
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div>
