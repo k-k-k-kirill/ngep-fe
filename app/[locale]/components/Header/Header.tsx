@@ -34,12 +34,12 @@ const Header: React.FC<HeaderProps> = ({ data }) => {
 
   return (
     <header className="container mx-auto px-4 grid grid-cols-4 gap-4 py-5">
-      <div className="lg:col-span-2">
+      <div>
         <Link href="/">
           <Image src={Logo} alt="NGEP" width={80} height={80} />
         </Link>
       </div>
-      <div className="col-span-3 lg:col-span-1 flex justify-end lg:justify-start items-center">
+      <div className="col-span-3 lg:col-span-2 flex justify-end items-center">
         <div className="lg:hidden" onClick={toggleMobileMenu}>
           <span>
             <Image src={Hamburger} alt="Menu" width={24} height={24} />

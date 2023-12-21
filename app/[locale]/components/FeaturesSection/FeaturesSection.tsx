@@ -10,7 +10,7 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({ data }) => {
   const { Title, Features } = data;
 
   return (
-    <Section className="bg-greyish mb-12">
+    <Section id="services" className="bg-greyish mb-12">
       <div className="container mx-auto px-4 py-5">
         <div className="mb-3">
           <h2>{Title}</h2>
