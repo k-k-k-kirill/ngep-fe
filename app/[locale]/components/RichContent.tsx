@@ -1,6 +1,6 @@
 import React from "react";
 import markdownToHtml from "../utils/markdownToHtml";
-import { notoSans } from "../layout";
+import { notoSans } from "../utils/font";
 
 interface RichContent {
   content: string;
