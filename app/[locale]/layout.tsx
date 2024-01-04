@@ -1,11 +1,11 @@
 import "./globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { useLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { useMessages } from "next-intl";
 import { Noto_Sans } from "next/font/google";
 
+//@ts-ignore
 export const notoSans = Noto_Sans({
   weight: ["500", "400", "600", "700"],
   subsets: ["vietnamese", "latin"],
