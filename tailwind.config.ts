@@ -7,6 +7,9 @@ const config: Config = {
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    fontFamily: {
+      body: ["Noto Sans"],
+    },
     extend: {
       colors: {
         greyish: "#F4F4F6",

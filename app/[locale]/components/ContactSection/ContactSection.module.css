@@ -15,8 +15,6 @@
 
 .textInput::placeholder {
   color: rgba(0, 0, 0, 0, 0.5);
-
-  font-family: "Mona Sans", "Open Sans";
   font-size: 16px;
   font-style: normal;
   font-weight: 400;

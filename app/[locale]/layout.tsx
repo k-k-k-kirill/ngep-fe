@@ -4,8 +4,12 @@ import { Inter } from "next/font/google";
 import { useLocale } from "next-intl";
 import { NextIntlClientProvider } from "next-intl";
 import { useMessages } from "next-intl";
+import { Noto_Sans } from "next/font/google";
 
-const inter = Inter({ subsets: ["latin"] });
+export const notoSans = Noto_Sans({
+  weight: ["500", "400", "600", "700"],
+  subsets: ["vietnamese", "latin"],
+});
 
 export const metadata: Metadata = {
   title: "NGEP",
@@ -23,7 +27,7 @@ export default function RootLayout({
   return (
     <html lang={locale}>
       <NextIntlClientProvider locale={locale} messages={messages}>
-        <body className={inter.className}>{children}</body>
+        <body className={notoSans.className}>{children}</body>
       </NextIntlClientProvider>
     </html>
   );
